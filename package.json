@@ -1,0 +1,19 @@
+{
+  "name": "og-image-server-with-puppeteer",
+  "version": "1.0.0",
+  "description": "og image creating server with puppeteer",
+  "main": "index.js",
+  "author": "kobayang <naokiod@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
