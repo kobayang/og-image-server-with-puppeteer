@@ -1,31 +1,41 @@
 <html>
-  <body>
-    <div id="cover-image">
-      <img id="og-image" src="<%= url %>" width="<%= width %>" height="<%= height %>" />
-      <div class="meetup-date">
-        <div class="date"><span>01</span> <span class="dot">.</span> <span>11</span></div>
-        <div class="day">Fri</div>
-      </div>
+  <head>
+    <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Lato:600" />
+    <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Poppins:300,600" />
+  </head>
+  <body id="cover-image">
+    <img id="og-image" src="<%= url %>" />
+    <div class="meetup-date">
+      <div class="date"><span>01</span> <span class="dot">.</span> <span>11</span></div>
+      <div class="day">Fri</div>
     </div>
   </body>
   <style>
     body {
       padding: 0;
       margin: 0;
-    }
-    #cover-image {
-      overflow: hidden;
+      width: 1200px;
+      height: 630px;
       position: relative;
+      background-color: transparent;
+      border: none;
     }
     img {
       display: block;
+      width: 1200px;
+      height: 630px;
+      border: none;
+      object-fit: cover;
     }
     .meetup-date {
       position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       top: 8px;
       left: 9px;
-      width: 56px;
-      height: 56px;
+      width: 120px;
+      height: 120px;
       border-radius: 8px;
       padding: 10px 0;
       box-sizing: border-box;
@@ -33,7 +43,7 @@
       color: white;
       text-align: center;
       font-family: Poppins;
-      font-size: 18px;
+      font-size: 44px;
       line-height: 1;
     }
     .date {
@@ -41,10 +51,11 @@
       font-weight: 600;
     }
     span {
-      font-size: 18px;
+      font-size: 42px;
     }
     .dot {
       font-family: Lato;
+      font-weight: 600;
     }
     .day {
       margin-top: 1px;

@@ -11,9 +11,11 @@ app.set('views', __dirname + '/views');
 
 // Endpoints
 app.get('/', async (req, res) => {
-  const url = 'https://huntr-assets.s3.amazonaws.com/projects/262829/cover_image/afef5c60-03d5-43ce-8505-2c1822d234e1';
-  const width = 1440;
-  const height = 586;
+  const url = ''; // Add image url
+
+  const width = 1200;
+  const height = 630;
+
   const renderUrl = `http://localhost:${port}/og_image?url=${url}&width=${width}&height=${height}`;
   const browser = await puppeteer.launch({
     args: ['--no-sandbox'],
@@ -21,9 +23,11 @@ app.get('/', async (req, res) => {
   const page = await browser.newPage();
 
   // adjustments for this page (so we hit the desktop breakpoint)
-  page.setViewport({ width, height, deviceScaleFactor: 2 });
+  await page.setViewport({ width, height });
 
   await page.goto(renderUrl);
+
+  console.log(await page.viewport());
 
   const imageBuffer = await page.screenshot();
   browser.close();
